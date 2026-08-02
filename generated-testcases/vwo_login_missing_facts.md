@@ -81,9 +81,21 @@
 - **Affected TCs:** `AUTH-11` to `AUTH-15`, `INT-04` to `INT-06`
 - **Impact:** TCs assume an SSO option exists on the login page and that SAML/OAuth flows are user-initiable from it.
 
-### 13. Existing-UI specifics (no screenshots provided)
+### 13. Forgot-password token mechanics (undefined)
+- **PRD says:** "Streamlined password reset process with secure token generation"
+- **Missing fact:** How the token is generated, its expiry window, single-use vs multi-use, delivery channel (email link vs code), and retry limits.
+- **Affected TCs:** `PM-01`, `PM-02`, `PM-03`
+- **Impact:** TCs assert a "secure token" and a "valid reset token/link" flow, but token format, expiry and usage rules are not stated, so reset success/failure behavior is unverifiable.
+
+### 14. Analytics and support integration specifics (undefined)
+- **PRD says:** "Login success/failure tracking for platform optimization", "Integration with support systems for login assistance"
+- **Missing fact:** What events are tracked, where the data goes, and how support is surfaced from the login page (widget, link, chat).
+- **Affected TCs:** `INT-02`, `INT-03`
+- **Impact:** TCs assert events are "tracked" and support is "available", but the exact integration behavior and entry point are not defined.
+
+### 15. Existing-UI specifics (no screenshots provided)
 - **PRD says:** Current features are described as "based on analysis of the existing VWO login interface"; UI text and layout are asserted (banner, branding, form).
-- **Missing fact:** Screenshots of the actual login page (`screenshots/` folder is empty).
+- **Missing fact:** Screenshots of the actual login page.
 - **Affected TCs:** `UI-01` to `UI-05`, `UI-10` to `UI-16`, `UX-01` to `UX-05`
 - **Impact:** Exact labels, button text, banner copy, theme-toggle labels, and visual layout cannot be verified. Any TC asserting exact UI text is unverifiable without screenshots.
 
@@ -92,5 +104,5 @@
 ## Suggested Fixes
 
 1. **Clarify the PRD** — add concrete values for password complexity, timeout, rate-limit thresholds, Remember Me duration, and 2FA method, or mark them as "to be defined" so TCs treat them as placeholders.
-2. **Add screenshots** of the actual login page to `screenshots/` to ground UI-level assertions.
+2. **Provide screenshots** of the actual login page to ground UI-level assertions.
 3. **Rewrite affected TCs** to assert only what the PRD states; label inferred behavior as "Inference (low confidence)" per the anti-hallucination rules, or drop the invented assertions.

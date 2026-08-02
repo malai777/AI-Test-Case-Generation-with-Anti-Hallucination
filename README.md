@@ -18,9 +18,6 @@ This project is an experiment around AI-generated test cases for the **VWO Login
 | `generated-testcases/vwo_login_testcases.md` | The full VWO login test case suite (132 test cases) generated from the PRD. |
 | `generated-testcases/vwo_login_missing_facts.md` | A cross-reference of the test cases against the PRD, listing facts the PRD does not state — the gaps that can cause wrong test cases. |
 | `generated-testcases/rate_limiting_testcases_without_rule.md` | Rate-limiting test cases generated **without** the anti-hallucination rule, kept as a baseline for comparison. |
-| `prompts/` | (empty — placeholder for experiment prompts) |
-| `automation/` | (empty — placeholder for automation scripts) |
-| `screenshots/` | (empty — placeholder for VWO login page screenshots) |
 
 ---
 
@@ -44,7 +41,6 @@ The PRD states requirements at a high level and does not define concrete values.
 - **Session timeout value** — "configurable timeout periods" but no default
 - **Remember Me scope** — "persistent login sessions" but no cookie/session duration
 - **Theme persistence** — Light/Dark mode options exist, but persistence is not stated
-- **Screenshots** — the `screenshots/` folder is empty, so UI-level assertions cannot be verified
 
 ---
 
